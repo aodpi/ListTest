@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #define NewItem (Payload*)malloc(sizeof(Payload));
+
 template <class Type> class LinkedList
 {
 private:
@@ -36,10 +37,10 @@ inline Type LinkedList<Type>::GetAt(int index)
 {
 	Payload* start = head;
 	int inx = 0;
-	while (start->next!=NULL)
+	while (start->next != NULL)
 	{
 		start = start->next;
-		if (inx==index)
+		if (inx == index)
 		{
 			return start->data;
 		}

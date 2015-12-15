@@ -2,8 +2,11 @@
 //
 
 #include "stdafx.h"
-#include "Lst.h"
+#include "LinkedList.h"
 #include <conio.h>
+#include <iostream>
+
+using namespace std;
 
 struct X
 {
@@ -12,6 +15,9 @@ public:
 	int ff;
 };
 
+///<summary>
+///Main entry for application
+///</summary>
 int main()
 {
 	LinkedList<X> list;
@@ -27,15 +33,15 @@ int main()
 	list.Add(dff);
 	for (int i = 0; i < list.Count; i++)
 	{
-		printf("%i ", list.GetAt(i).ff);
+		cout << list.GetAt(i).ff << " ";
 	}
 	printf("\n");
 	LinkedList<X> ls = list.GetRange(0, 2);
 	for (int i = 0; i < ls.Count; i++)
 	{
-		printf("%i ", ls.GetAt(i).ff);
+		cout << ls.GetAt(i).ff << " ";
 	}
-	getch();
+	cin.get();
     return 0;
 }
 
