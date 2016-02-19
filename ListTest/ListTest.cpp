@@ -15,9 +15,6 @@ public:
 	int ff;
 };
 
-///<summary>
-///Main entry for application
-///</summary>
 int main()
 {
 	LinkedList<X> list;

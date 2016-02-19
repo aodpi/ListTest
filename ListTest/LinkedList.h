@@ -78,10 +78,7 @@ inline void LinkedList<Type>::Delete(Type * item)
 	}
 }
 
-//<summary>Gets indicated range as a new list.
-//<param name="index">Starting index</param>
-//<param name="count">Number of elements to get</param>
-//</summary>
+//Gets indicated range as a new list.
 template<class Type>
 inline LinkedList<Type> LinkedList<Type>::GetRange(int index, int count)
 {
