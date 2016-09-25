@@ -14,7 +14,8 @@ private:
 	};
 	Payload* head = NewItem;
 public:
-
+	bool Any(bool(*f)(Type a));
+	LinkedList<Type> Where(bool(*f)(Type a));
 	LinkedList();
 	Type GetAt(int index);
 	void Add(Type* item);
@@ -24,6 +25,35 @@ public:
 	void Reverse();
 	int Count;
 };
+
+template<class Type>
+inline bool LinkedList<Type>::Any(bool(*f)(Type a))
+{
+	Payload* start = head;
+	while (start->next!=NULL){
+		if (f(start->data)){
+			return true;
+		}
+		start = start->next;
+	}
+	return false;
+}
+
+template<class Type>
+inline LinkedList<Type> LinkedList<Type>::Where(bool(*f)(Type a))
+{
+	Payload* start = head;
+	LinkedList<Type> result;
+	while (start->next!=NULL)
+	{
+		start = start->next;
+		if (f(start->data))
+		{
+			result.Add(&start->data);
+		}
+	}
+	return result;
+}
 
 template<typename Type>
 inline LinkedList<Type>::LinkedList()
